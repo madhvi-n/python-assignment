@@ -1,0 +1,18 @@
+[tool.black]
+line-length = 88  # Customize as per your preference
+target-version = ['py36', 'py37', 'py38', 'py39']  # Specify target Python versions
+include = '\.pyi?$'  # Include only Python files for formatting
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''

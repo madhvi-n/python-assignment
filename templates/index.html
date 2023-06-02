@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Assembly Program</title>
+    <script>
+        function convertToUppercase(element) {
+          element.value = element.value.toUpperCase();
+        }
+    </script>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Assembly Program Execution</h1>
+    <form method="POST">
+        <textarea name="program" rows="10" cols="50" placeholder="Enter your program instructions here
+Example:
+  MV REG1, #2000
+  MV REG2, #4000
+  ADD REG1, REG2
+  ADD REG1, 600
+  SHOW REG" oninput="convertToUppercase(this)"></textarea>
+
+        <br>
+        <input type="submit" value="Execute">
+    </form>
+
+
+    {% if registers %}
+      <div class="divider">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+      
+      <h2>Registers:</h2>
+      <p>{{ registers.items() }}</p>
+      <ul>
+          {% for key, value in registers.items() %}
+              <li>{{ key }}: {{ value }}</li>
+          {% endfor %}
+      </ul>
+    {% endif %}
+</body>
+</html>

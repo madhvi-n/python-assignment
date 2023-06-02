@@ -1,24 +1,29 @@
 # python-assignment
 
-- Create a simple assembly Language which will have 3 operations
-- Get a constant into a register of the form
-  ```
-  MV REG1,#2000
-  MV REG2,#4000
-  ```
-- Add two registers together. Save results in the first register
-  ```
-  ADD REG1, REG2
-  ```
-- Add register and constant together. Save results in the first register.
-  ```
-  ADD REG1,600
-  ```
-- Show the results of a register
-  ```
-  SHOW REG
-  ```
-- The simple python program should be able to accept a program containing one or more MV statements and an ADD statement and print the results of a SHOW REG at the end.
+## Requirements
+- Python 3.9
 
-### Commands
-- Run the file using `python main.py`
+
+## Installation
+- Clone the repository and enter the root directory
+  ```
+  git clone https://github.com/madhvi-n/python-assignment.git
+  cd python-assignment
+  ```
+- Create a virtual environment and activate it
+  ```
+  virtualenv venv --python=python3
+  source venv/bin/activate
+  ```
+- Install Python dependencies
+  ```
+  pip install -r requirements.txt
+  ```
+
+- Set up the flask app and run the application
+  ```
+  set FLASK_APP=app.py
+  flask run
+  ```
+
+- Access the application running at `localhost:5000`
